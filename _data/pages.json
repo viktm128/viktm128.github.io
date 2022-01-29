@@ -1,0 +1,10 @@
+{
+    "main-pages": [
+        { "name": "Home", "link": "/" },
+        { "name": "About", "link": "/about.html" },
+        { "name": "Econ", "link": "/econ.html" }
+    ],
+    "econ-pages": [
+        { "name": "Budget Constraints", "link": "/econ/budget_constraints.html"}
+    ]
+}

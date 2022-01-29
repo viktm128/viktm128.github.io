@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Budget Constraints</title>
+  </head>
+  <body>
+    <nav>
+  
+    <a href="/" > 
+      Home
+    </a>
+  
+    <a href="/about.html" > 
+      About
+    </a>
+  
+    <a href="/econ.html" > 
+      Econ
+    </a>
+  
+</nav>
+    <h1> Budget Constraints! </h1>
+<p> Suppose you have a fixed amount of money, lets say 10 dollars. So you go to the bakery to spend your hard earned money on treats. Cakes cost c dollars and pies cost p dollars. </p>
+
+<p> If you buy more cakes, you won't have very much money for pies. If you buy more pies, you won't have very much money for cakes! Let's explore some different combinations of goods you can buy</p>
+
+<p> In the graph below, x represents the number of pies, y represents the number of cakes. Any point on the black line is a theoretical number of pies and cakes you can buy with your entire budget of 10 dollars. You can play with different costs, c and p, to see how your haul at the bakery changes based on costs.</p>
+
+<script src="https://www.desmos.com/api/v1.6/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+
+<div id="calculator" style="width: 800px; height: 500px;"></div>
+
+<script>
+    var elt = document.getElementById('calculator');
+    var calculator = Desmos.GraphingCalculator(
+        elt,
+        { lockViewport: true}
+    );
+    calculator.setExpression({
+        id: 'c',
+        latex: 'c=2'
+    });
+    calculator.setExpression({
+        id: 'c',
+        sliderBounds: { min: 0.5, max: 10, step: 0.5 }
+    });
+    calculator.setExpression({
+        id: 'p',
+        latex: 'p=3'
+    });
+    calculator.setExpression({
+        id: 'p',
+        sliderBounds: { min: 0.5, max: 10, step: 0.5 }
+    });
+    calculator.setExpression({ id: 'graph1', latex: '\\{0 \\leq x \\leq 10/p: (10 - px)/c\\}', color: '#000000', label: '(10 - px)/c' });
+    calculator.setMathBounds({
+        left: -1,
+        right: 10,
+        bottom: -1,
+        top: 10
+    });
+    calculator.setState({
+        xAxisLabel: '# of Pies',
+        yAxisLabel: '# of Cakes'
+    });
+    
+</script>
+  </body>
+</html>
