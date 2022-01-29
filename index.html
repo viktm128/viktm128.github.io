@@ -7,6 +7,14 @@
 </head>
 <body>
     <h1>Vikram Mathew's Personal Website</h1>
-    <p>placeholder text</p>
+    <script type="text/javascript" src="https://www.desmos.com/api/v1.6/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+
+    <div id="calculator" style="width: 600px; height: 400px;"></div>
+
+    <script type="text/javascript">
+        var elt = document.getElementByID('calculator')
+        var calculator = Desmos.GraphingCalculator(elt)
+        calculator.setExpression({id: 'graph1', latex='y=x^2'})
+    </script>
 </body>
 </html>
