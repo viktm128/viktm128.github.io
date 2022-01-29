@@ -9,13 +9,44 @@
     <h1>Vikram Mathew's Personal Website</h1>
     <script src="https://www.desmos.com/api/v1.6/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
 
+    <h3> Budget Constraints</h3>
+    <p> We start by examining different tradeoffs between cakes and pies </p>
     <div id="calculator" style="width: 600px; height: 400px;"></div>
 
     <script>
         var elt = document.getElementById('calculator');
-        var calculator = Desmos.GraphingCalculator(elt);
-        calculator.setExpression({ id: 'graph1', latex: 'y=x^2' });
+        var calculator = Desmos.GraphingCalculator(
+            elt,
+            { lockViewport: true}
+        );
+        calculator.setExpression({
+            id: 'c',
+            latex: 'c=2'
+        });
+        calculator.setExpression({
+            id: 'c',
+            sliderBounds: { min: 0.5, max: 10, step: 0.5 }
+        });
+        calculator.setExpression({
+            id: 'p',
+            latex: 'p=3'
+        });
+        calculator.setExpression({
+            id: 'p',
+            sliderBounds: { min: 0.5, max: 10, step: 0.5 }
+        });
+        calculator.setExpression({ id: 'graph1', latex: '\\{0 \\leq x \\leq 10/p: (10 - px)/c\\}', color: '#000000' });
+        calculator.setMathBounds({
+            left: -1,
+            right: 10,
+            bottom: -1,
+            top: 10
+        });
+        calculator.setState({
+            xAxisLabel: '# of Pies',
+            yAxisLabel: '# of Cakes'
+        });
+        
     </script>
-    <p> DEBUG: desmos issues </p>
 </body>
 </html>
